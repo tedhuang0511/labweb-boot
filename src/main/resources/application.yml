@@ -1,0 +1,33 @@
+spring:
+  jackson:
+    #responseEntity自動包裝回復的json日期格式
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd
+  messages:
+    basename: error.Messages
+    encoding: UTF-8
+    fallback-to-system-locale: false
+  datasource:
+    # DataSource
+    url: jdbc:mysql://35.194.199.182:3306/ted?serverTimezone=Asia/Taipei
+    username: sbbty
+    password: ji32k7au4a83
+  jpa:
+    # SessionFactory
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/    # 設定去templates資料夾找html檔案
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML5
+
+server:
+  port: 8080
+  servlet:
+    context-path: /labweb-boot
